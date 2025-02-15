@@ -10,8 +10,5 @@ export default defineConfig((options: Options) => ({
   dts: true,
   clean: true,
   external: ["react", "react-dom"],
-  loader: {
-    '.css': 'copy'
-  },
   ...options,
 }));
