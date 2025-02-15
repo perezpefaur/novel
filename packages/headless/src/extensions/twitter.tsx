@@ -1,6 +1,7 @@
 import { Node, mergeAttributes, nodePasteRule } from "@tiptap/core";
 import { NodeViewWrapper, ReactNodeViewRenderer, type ReactNodeViewRendererOptions } from "@tiptap/react";
 import { Tweet } from "react-tweet";
+import styles from "../styles/tweet.module.css";
 export const TWITTER_REGEX_GLOBAL = /(https?:\/\/)?(www\.)?x\.com\/([a-zA-Z0-9_]{1,15})(\/status\/(\d+))?(\/\S*)?/g;
 export const TWITTER_REGEX = /^https?:\/\/(www\.)?x\.com\/([a-zA-Z0-9_]{1,15})(\/status\/(\d+))?(\/\S*)?$/;
 
@@ -18,7 +19,7 @@ const TweetComponent = ({ node }: { node: Partial<ReactNodeViewRendererOptions> 
 
   return (
     <NodeViewWrapper>
-      <div data-twitter="">
+      <div data-twitter="" className={styles["tweet-theme"]}>
         <Tweet id={tweetId} />
       </div>
     </NodeViewWrapper>
